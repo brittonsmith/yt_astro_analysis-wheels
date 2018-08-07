@@ -2,7 +2,7 @@ env:
     global:
         - REPO_DIR=yt_astro_analysis
         # Commit from your-project that you want to build
-        - BUILD_COMMIT=gold-standard-v3
+        - BUILD_COMMIT=d8200b1c8ed54c8ae0cec10cf10940340983639c
         # Non-numpy or testing dependencies
         - GEN_DEPENDS="setuptools sympy matplotlib h5py yt"
         - PLAT=x86_64

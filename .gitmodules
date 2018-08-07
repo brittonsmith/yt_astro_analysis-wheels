@@ -1,0 +1,6 @@
+[submodule "multibuild"]
+	path = multibuild
+	url = https://github.com/matthew-brett/multibuild.git
+[submodule "yt_astro_analysis"]
+	path = yt_astro_analysis
+	url = https://github.com/yt-project/yt_astro_analysis.git

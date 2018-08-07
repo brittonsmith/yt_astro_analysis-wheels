@@ -1,6 +1,6 @@
 env:
     global:
-        - REPO_DIR=yt
+        - REPO_DIR=yt_astro_analysis
         # Commit from your-project that you want to build
         - BUILD_COMMIT=gold-standard-v3
         # Non-numpy or testing dependencies

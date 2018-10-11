@@ -13,7 +13,8 @@ env:
         # This is for Rackspace uploads.  Contact Matthew Brett, or the
         # scikit-learn team, for permission (and the API key) to upload to the
         # Rackspace account used here, or use your own account.
-        # - secure:
+        - secure:
+            "rhVoArcO5hLbedghKuHYza1NIzJUGg7jb4HWMLe0RuNHt4w7RVzyMYOrJp0UK16aFMIlNflSoT03GMwdEG7HjodtVHr4bYoQafVKSs5e/byzuUFlPZIc0cVFrrIosr/coQxtudAi1/HOU8IOvKbCYoFXudc7f20VpwZMS9y99m5wW//vaGTlcMz8D8rbxP3xb4VfHeCb2HitVUqoYKiHnwPmlCVWLSsg61O0mOkUKdwlBJdoQzHGipkpo/MEg+Ip4t+j5Qe4y0E6mbK21Otb8CXA1nnMHTsrzzw6Cgl/OuikiD5oHrl9b2UV5wAo8BazVGU1zay4SVw1DeHd/CGfds76N1fVkpY3CqJx8zReq/oPMARbrPyTmfnaIenGA5B9hpLKlllgG0ESoSdK3tEqc88au9z0zio7vmEmhAo/Yz3onK/DfEfH1EcfRGGGXUIeUJecLz0OxOewdlgSCiMG1/4I7b+5hT/cxqJlSUrxF9U1/1+zBoTwVTC1vupMMEt+xMQN9ruWUS4IRXGigybIC+rFVxHOtZUFahgJG9UyT7q2HlUuq+NKmaip1hBddpIs/DKeQUmT3tGHhoWquFrMOgoAPBbeYqj5POn2hWuSqtqdxW7PNBoLnQXWgWHkxEZf4x8ODR0YPEXFsvcqtJA4RUFEF09+s3ItN4iVKdTD628="
 
 language: python
 # The travis Python version is unrelated to the version we build and test
@@ -110,7 +111,7 @@ after_success:
     # This uploads the wheels to a Rackspace container owned by the
     # scikit-learn team, available at http://wheels.scipy.org.  See above
     # for information on using this account or choosing another.
-    #- python -m wheelhouse_uploader upload --local-folder
-    #    ${TRAVIS_BUILD_DIR}/wheelhouse/
-    #    --no-update-index
-    #    wheels
+    - python -m wheelhouse_uploader upload --local-folder
+        ${TRAVIS_BUILD_DIR}/wheelhouse/
+        --no-update-index
+        wheels

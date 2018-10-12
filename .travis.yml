@@ -2,7 +2,7 @@ env:
     global:
         - REPO_DIR=yt_astro_analysis
         # Commit from your-project that you want to build
-        - BUILD_COMMIT=963436d4df703be733a000f03b8481422bf6e56d
+        - BUILD_COMMIT=9a0d94ff7b47eb06e4ffc71230db397efcd3c446
         # Non-numpy or testing dependencies
         - GEN_DEPENDS="setuptools sympy matplotlib h5py yt"
         - PLAT=x86_64
@@ -36,16 +36,6 @@ matrix:
         - NP_TEST_DEP=numpy==1.10.4
     - os: linux
       env:
-        - MB_PYTHON_VERSION=2.7
-        - NP_BUILD_DEP=numpy==1.10.4
-        - NP_TEST_DEP=numpy==1.10.4
-        - UNICODE_WIDTH=16
-      env:
-        - MB_PYTHON_VERSION=3.4
-        - NP_BUILD_DEP=numpy==1.10.4
-        - NP_TEST_DEP=numpy==1.10.4
-    - os: linux
-      env:
         - MB_PYTHON_VERSION=3.5
         - NP_BUILD_DEP=numpy==1.10.4
         - NP_TEST_DEP=numpy==1.10.4
@@ -63,12 +53,6 @@ matrix:
       language: generic
       env:
         - MB_PYTHON_VERSION=2.7
-        - NP_BUILD_DEP=numpy==1.10.4
-        - NP_TEST_DEP=numpy==1.10.4
-    - os: osx
-      language: generic
-      env:
-        - MB_PYTHON_VERSION=3.4
         - NP_BUILD_DEP=numpy==1.10.4
         - NP_TEST_DEP=numpy==1.10.4
     - os: osx
@@ -92,10 +76,11 @@ matrix:
 
 before_install:
     - BUILD_DEPENDS="$NP_BUILD_DEP Cython"
-    - TEST_DEPENDS="$NP_TEST_DEP nose $GEN_DEPENDS"
+    - TEST_DEPENDS="$NP_TEST_DEP nose $GEN_DEPENDS wheel==0.31.1"
     - source multibuild/common_utils.sh
     - source multibuild/travis_steps.sh
     - before_install
+    - pip install 'wheel==0.31.1'
 
 install:
     # Maybe get and clean and patch source
